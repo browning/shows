@@ -1,1 +1,28 @@
-<i>Showlist index</i>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="span2"></div>
+<div class="span8">
+<table class="table table-striped">
+<caption>Shows on 1/1/2013</caption>
+<thead>
+    <tr>
+      <th>Acts</th>
+      <th>Genre</th>
+      <th>Venue</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+{% for show in shows %}
+<tr>
+<td>{{ show.acts }}</td>
+<td>{{ show.genre }}</td>
+<td>{{ show.venue }}</td>
+<td>{{ show.datetime }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+<div class="span2"></div>
+
+{% endblock %}
