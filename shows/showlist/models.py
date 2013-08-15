@@ -23,3 +23,6 @@ class Show(models.Model):
 
 	def iterableHype(self):
 		return range(self.hype)
+
+	def tzShowTime(self):
+		return self.datetime.strftime("%I:%M %p")

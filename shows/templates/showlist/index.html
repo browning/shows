@@ -7,6 +7,7 @@
 </style>
 {% endblock %}
 {% block content %}
+
 <div class="span2"></div>
 <div class="span8">
 {% for k,v in shows.items %}
@@ -28,7 +29,7 @@
 <td class="c1">{{ show.acts }}</td>
 <td class="c1">{{ show.genre }}</td>
 <td class="c1">{{ show.venue }}</td>
-<td class="c1">{{ show.datetime }}</td>
+<td class="c1">{{ show.tzShowTime }}</td>
 <td class="c1">
 {% for x in show.iterableHype %}
 	<i class="icon-star"></i>
@@ -42,5 +43,4 @@
 </div>
 
 <div class="span2"></div>
-
 {% endblock %}

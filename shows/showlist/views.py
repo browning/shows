@@ -11,7 +11,7 @@ def index(request):
     	datetime__lte=datetime.date.today() +datetime.timedelta(days=14)).order_by('datetime')
     showlist = OrderedDict()
     for show in shows:
-    	md = pytz.timezone("America/New_York").normalize(show.datetime).strftime("%A %m/%d")
+    	md = show.datetime.strftime("%A %m/%d")
     	if str(md) in showlist:
     		showlist[md].append(show)
     	else:
