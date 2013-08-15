@@ -1,5 +1,11 @@
 {% extends "base.html" %}
-
+{% block extra_css %}
+<style>
+.c1 { 
+	width: 25%;
+}
+</style>
+{% endblock %}
 {% block content %}
 <div class="span2"></div>
 <div class="span8">
@@ -18,10 +24,10 @@
   {% endif %}
 {% for show in v %}
 <tr>
-<td>{{ show.acts }}</td>
-<td>{{ show.genre }}</td>
-<td>{{ show.venue }}</td>
-<td>{{ show.datetime }}</td>
+<td class="c1">{{ show.acts }}</td>
+<td class="c1">{{ show.genre }}</td>
+<td class="c1">{{ show.venue }}</td>
+<td class="c1">{{ show.datetime }}</td>
 </tr>
 {% endfor %}
 </table>
