@@ -19,3 +19,7 @@ class Show(models.Model):
 	venue = models.ForeignKey(Venue)
 	genre = models.ForeignKey(Genre)
 	datetime = models.DateTimeField()
+	hype = models.IntegerField()
+
+	def iterableHype(self):
+		return range(self.hype)

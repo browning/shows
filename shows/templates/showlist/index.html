@@ -2,7 +2,7 @@
 {% block extra_css %}
 <style>
 .c1 { 
-	width: 25%;
+	width: 20%;
 }
 </style>
 {% endblock %}
@@ -19,6 +19,7 @@
       <th>Genre</th>
       <th>Venue</th>
       <th>Time</th>
+      <th>Hype</th>
     </tr>
   </thead>
   {% endif %}
@@ -28,6 +29,11 @@
 <td class="c1">{{ show.genre }}</td>
 <td class="c1">{{ show.venue }}</td>
 <td class="c1">{{ show.datetime }}</td>
+<td class="c1">
+{% for x in show.iterableHype %}
+	<i class="icon-star"></i>
+{% endfor %}
+</td>
 </tr>
 {% endfor %}
 </table>
