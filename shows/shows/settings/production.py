@@ -55,7 +55,7 @@ DATABASES = {
 		"ENGINE": "django.db.backends.postgresql_psycopg2",
 		"NAME": "shows",
 		"USER": "postgres",
-		"PASSWORD": os.environ["SHOWS_DB_PWD"],
+		"PASSWORD": get_env_setting("SHOWS_DB_PWD"),
 		"HOST": "localhost",
 		"PORT": "",
 	}
