@@ -50,7 +50,16 @@ SERVER_EMAIL = EMAIL_HOST_USER
 ########## END EMAIL CONFIGURATION
 
 ########## DATABASE CONFIGURATION
-DATABASES = {}
+DATABASES = {
+	"default": {
+		"ENGINE": "django.db.backends.postgresql_psycopg2",
+		"NAME": "shows",
+		"USER": "postgres",
+		"PASSWORD": os.environ["SHOWS_DB_PWD"],
+		"HOST": "localhost",
+		"PORT": "",
+	}
+}
 ########## END DATABASE CONFIGURATION
 
 
