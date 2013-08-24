@@ -82,5 +82,5 @@ SECRET_KEY = get_env_setting('SECRET_KEY')
 ########## SITE CONFIGURATION
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 ########## END SITE CONFIGURATION
