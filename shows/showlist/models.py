@@ -12,6 +12,10 @@ class Venue(models.Model):
 	name = models.CharField(max_length=150)
 	address = models.CharField(max_length=300)
 
+class Band(models.Model):
+	name = models.CharField(max_length=200)
+	youtube_link = models.CharField(max_length=300)
+
 class Show(models.Model):
 	def __unicode__(self):
 		return self.acts
@@ -20,9 +24,11 @@ class Show(models.Model):
 	genre = models.ForeignKey(Genre)
 	datetime = models.DateTimeField()
 	hype = models.IntegerField()
+	bands = models.ManyToManyField(Band)
 
 	def iterableHype(self):
 		return range(self.hype)
 
 	def tzShowTime(self):
 		return self.datetime.strftime("%I:%M %p")
+
