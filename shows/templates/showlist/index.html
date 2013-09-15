@@ -3,7 +3,13 @@
 {% block extra_js %}
 <script>
 jQuery(document).ready(function($) {
-    $('#player1').mediaelementplayer().play();
+
+    $(".vidlink").click(function() {
+      $("#viddiv").html('');
+      $("#viddiv").html('<video width="100" height="100" id="player" preload="none" <source type="video/youtube" src="http://www.youtube.com/watch?v=FtpWVp07A14" autoplay="true"/> </video>');
+      var player = new MediaElementPlayer("#player");
+      player.play();
+    });
 });
 </script>
 {% endblock %}
@@ -19,6 +25,7 @@ jQuery(document).ready(function($) {
 
 <div class="span7">
 <h3>ATX Shows</h3><br />
+
 {% for k,v in shows.items %}
 <table class="table table-striped">
 <caption style="margin-bottom: 20px"><b>{{k}}</b></caption>
@@ -55,8 +62,10 @@ jQuery(document).ready(function($) {
 	<br />
 	<p>Hello, welcome to atxshows.com where the hype is made up. If you want to reach me to add a show or something just shoot me an email at info@atxshows.com</p>
   <br /><br />
+  <div id='viddiv'>
   <video width="100" height="100" id="player1" preload="none">
     <source type="video/youtube" src="http://www.youtube.com/watch?v=nOEw9iiopwI" />
   </video>
+  </div>
 </div>
 {% endblock %}
