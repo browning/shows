@@ -13,6 +13,8 @@ class Venue(models.Model):
 	address = models.CharField(max_length=300)
 
 class Band(models.Model):
+	def __unicode__(self):
+		retun self.name
 	name = models.CharField(max_length=200)
 	youtube_link = models.CharField(max_length=300)
 
