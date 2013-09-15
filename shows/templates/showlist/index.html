@@ -6,9 +6,11 @@ jQuery(document).ready(function($) {
 
     $(".vidlink").click(function() {
       $("#viddiv").html('');
-      $("#viddiv").html('<video width="100" height="100" id="player" preload="none" <source type="video/youtube" src="http://www.youtube.com/watch?v=FtpWVp07A14" autoplay="true"/> </video>');
+      $("#viddiv").html('<video width="100" height="100" id="player" preload="none" <source type="video/youtube" src="' + 
+        $(this).attr('href') + '" autoplay="true"/> </video>');
       var player = new MediaElementPlayer("#player");
       player.play();
+      return false;
     });
 });
 </script>
@@ -42,7 +44,17 @@ jQuery(document).ready(function($) {
   {% endif %}
 {% for show in v %}
 <tr>
+{% if show.bands %}
+<td>
+{% for band in show.bands.all %}
+  {{ band.name }}
+  <a class="vidlink" href="{{ band.youtube_link }}"><i class="icon-play"></i></a>
+  {% if not forloop.last %}, {% endif %}
+{% endfor %}
+</td>
+{% else %}
 <td class="c1">{{ show.acts }}</td>
+{% endif %}
 <td class="c1">{{ show.genre }}</td>
 <td class="c1">{{ show.venue }}</td>
 <td class="c1">{{ show.tzShowTime }}</td>
