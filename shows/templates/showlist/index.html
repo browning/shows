@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
   {% endif %}
 {% for show in v %}
 <tr>
-{% if show.bands %}
+{% if show.bands.all %}
 <td>
 {% for band in show.bands.all %}
   {{ band.name }}
