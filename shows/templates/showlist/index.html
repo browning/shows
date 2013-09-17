@@ -48,7 +48,9 @@ jQuery(document).ready(function($) {
 <td>
 {% for band in show.bands.all %}
   {{ band.name }}
-  <a class="vidlink" href="{{ band.youtube_link }}"><i class="icon-play"></i></a>
+  {% if band.youtube_link != 'none' %}
+    <a class="vidlink" href="{{ band.youtube_link }}"><i class="icon-play"></i></a>
+  {% endif %}
   {% if not forloop.last %}, {% endif %}
 {% endfor %}
 </td>
